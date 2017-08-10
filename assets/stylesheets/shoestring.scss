@@ -2,6 +2,7 @@
 @import "modern-business";
 @import "form";
 @import "list";
+@import "media-queries";
 
 * {
   box-sizing: border-box;
@@ -37,20 +38,27 @@ small {
 
 $total: 12;
 $step: 100% / $total;
+$sizes: ( xs : 576px, sm : 800px, md :992px, lg: 1200px );
+
+@mixin makeCols($s) {
+  @for $i from 1 through 12 {
+    .col-#{$s}-#{$i} {
+      width: #{$i * 8.33%};
+      float: left;
+      content: #{$s + $i}
+    }
+  }
+}
 
 @for $i from 1 through $total {
-  .col-lg-#{$i}, .col-sm-#{$i} , .col-md-#{$i}{
-    width: $i * $step;
-    // display: inline-block;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    position: relative;
-    padding-right: 15px;
-    padding-left: 15px;
+  @each $key, $value in $sizes {
+    @media (min-width: $value) {
+      @include makeCols($key)
+    }
   }
-
 }
+
+
 
 img {
   vertical-align: middle;
