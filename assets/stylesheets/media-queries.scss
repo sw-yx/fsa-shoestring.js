@@ -1,0 +1,36 @@
+// $grid-columns:  12;
+// $sizes: ( xs, sm, md, lg );
+
+// @for $i from 1 through $grid-columns {
+//   @each $size in $sizes {
+
+//     .col-#{$size}-#{$i} {
+
+//     }
+
+//   }
+// }
+.potato {
+  color: brown
+}
+@mixin breakpoint($size) {
+  @if $size == xs {
+    @media (max-width: 767px) { @content; }
+  }
+
+  @else if $size == sm {
+    @media (min-width: 768px) { @content; }
+  }
+
+  @else if $size == md {
+    @media (min-width: 992px) { @content; }
+  }
+
+  @else if $size == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
