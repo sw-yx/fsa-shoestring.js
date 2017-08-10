@@ -12,4 +12,87 @@ body {
     color: white;
   }
 }
+.navbar {
+  z-index: 999;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  width: 75%;
+}
 
+// .row {
+  // clear: both;
+  // margin-right: -15px;
+  // margin-left: -15px;
+// }
+
+$total: 12;
+$step: 100% / $total;
+
+@for $i from 1 through $total {
+  .col-lg-#{$i} { 
+    width: $i * $step;
+    display: inline-block;
+    // float: left;
+    position: relative;
+    min-height: 1px;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+}
+.col-lg-4 {
+  float: left;
+  // padding-bottom: 50px;
+}
+.col-lg-6 {
+  float: left;
+  // padding-bottom: 50px;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+.img-home-portfolio {
+  margin-bottom: 30px;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h2 {
+  font-size: 2em;
+}
+hr {
+  border-color: #fff;
+}
+
+// .section-colored {
+//   clear: both;
+// }
+.section {
+  clear: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// .clearfix:after {
+//   visibility: hidden;
+//   display: block;
+//   font-size: 0;
+//   content: " ";
+//   clear: both;
+//   height: 0;
+// }
+// .clearfix { display: inline-block; }
+// /* start commented backslash hack \*/
+// * html .clearfix { height: 1%; }
+// .clearfix { display: block; }
+// /* close commented backslash hack */
